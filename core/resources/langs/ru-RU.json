@@ -1,0 +1,15 @@
+{
+  "auth": "Авторизация",
+  "loginOrEmail": "Логин или почта",
+  "password": "Пароль",
+  "login": "Войти",
+  "signUp": "Зарегистрироваться",
+  "profile": "Профиль",
+  "signOut": "Выйти",
+  "bottomNavigationBar": {
+    "news": "Лента",
+    "map": "Карта",
+    "like": "Избранные",
+    "profile": "Профиль"
+  }
+}

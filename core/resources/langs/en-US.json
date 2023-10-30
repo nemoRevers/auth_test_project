@@ -1,0 +1,15 @@
+{
+  "auth": "Authorization",
+  "loginOrEmail": "Login or Email",
+  "password": "Password",
+  "login": "Login",
+  "signUp": "Sgn up",
+  "profile": "Profile",
+  "signOut": "Sign out",
+  "bottomNavigationBar": {
+    "news": "News",
+    "map": "Map",
+    "like": "Like",
+    "profile": "Profile"
+  }
+}
