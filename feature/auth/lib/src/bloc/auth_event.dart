@@ -19,3 +19,10 @@ class LoginEvent extends AuthEvent {
         password,
       ];
 }
+
+class HideDialog extends AuthEvent {
+  const HideDialog();
+
+  @override
+  List<Object?> get props => <Object?>[];
+}

@@ -7,12 +7,12 @@ part of 'tokens_entity.dart';
 // **************************************************************************
 
 TokensEntity _$TokensEntityFromJson(Map<String, dynamic> json) => TokensEntity(
-      accessToken: json['access_token'] as String?,
-      refreshToken: json['refresh_token'] as String?,
+      accessToken: json['accessToken'] as String,
+      refreshToken: json['refreshToken'] as String,
     );
 
 Map<String, dynamic> _$TokensEntityToJson(TokensEntity instance) =>
     <String, dynamic>{
-      'access_token': instance.accessToken,
-      'refresh_token': instance.refreshToken,
+      'accessToken': instance.accessToken,
+      'refreshToken': instance.refreshToken,
     };

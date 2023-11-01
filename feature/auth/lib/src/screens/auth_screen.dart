@@ -1,4 +1,5 @@
 import 'package:core/core.dart';
+import 'package:domain/usecases/auth_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:navigation/app_router/app_router.dart';
 
@@ -11,7 +12,10 @@ class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AuthBloc>(
-      create: (BuildContext _) => AuthBloc(appRouter: appLocator<AppRouter>()),
+      create: (BuildContext _) => AuthBloc(
+        appRouter: appLocator<AppRouter>(),
+        authUseCase: appLocator<SignInUseCase>(),
+      ),
       child: const AuthForm(),
     );
   }

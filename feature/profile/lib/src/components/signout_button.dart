@@ -18,12 +18,16 @@ class SignOutButton extends StatelessWidget {
       ),
       alignment: Alignment.centerLeft,
       color: appColors.secondaryBg,
-      child: Text(
-        LocaleKeys.signOut.watchTr(context),
-        textAlign: TextAlign.left,
-        style: AppFonts.normal16.copyWith(
-          color: appColors.warning,
-        ),
+      child: BlocBuilder<ProfileBloc, ProfileState>(
+        builder: (BuildContext context, ProfileState state) {
+          return Text(
+            LocaleKeys.signOut.watchTr(context),
+            textAlign: TextAlign.left,
+            style: AppFonts.normal16.copyWith(
+              color: state.isLoading ? appColors.subText : appColors.warning,
+            ),
+          );
+        },
       ),
       onPressed: () {
         context.read<ProfileBloc>().add(const SignOut());

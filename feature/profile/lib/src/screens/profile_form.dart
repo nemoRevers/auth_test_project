@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:core_ui/core_ui.dart';
 import 'package:flutter/material.dart';
 
+import '../bloc/profile_bloc.dart';
 import '../components/app_bottom_navigation_bar.dart';
 import '../components/signout_button.dart';
 
@@ -39,20 +40,28 @@ class ProfileForm extends StatelessWidget {
                   AssetsPath.PROFILE,
                 ),
                 const SizedBox(height: AppDimens.HEIGHT_19),
-                Text(
-                  'Марипбек Чингиз',
-                  style: AppFonts.bold24.copyWith(
-                    color: appColors.text,
-                  ),
+                BlocBuilder<ProfileBloc, ProfileState>(
+                  builder: (BuildContext _, ProfileState state) {
+                    return Text(
+                      state.nickname,
+                      style: AppFonts.bold24.copyWith(
+                        color: appColors.text,
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(
                   height: AppDimens.HEIGHT_14,
                 ),
-                Text(
-                  'maripbekoff@gmail.com',
-                  style: AppFonts.normal16.copyWith(
-                    color: appColors.subText,
-                  ),
+                BlocBuilder<ProfileBloc, ProfileState>(
+                  builder: (BuildContext context, ProfileState state) {
+                    return Text(
+                      state.email,
+                      style: AppFonts.normal16.copyWith(
+                        color: appColors.subText,
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

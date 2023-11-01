@@ -1,4 +1,4 @@
-part of '../dio_config.dart';
+import 'package:dio/dio.dart';
 
 class ErrorInterceptor extends Interceptor {
   final Dio dio;
@@ -18,10 +18,13 @@ class ErrorInterceptor extends Interceptor {
       case DioException.badResponse:
         switch (err.response?.statusCode) {
           case 400:
+            handler.reject(err);
             break;
           case 404:
+            handler.reject(err);
             break;
           case 500:
+            handler.reject(err);
             break;
         }
         break;
@@ -41,6 +44,6 @@ class ErrorInterceptor extends Interceptor {
     DioException error,
     ErrorInterceptorHandler handler,
   ) async {
-    return handler.next(error);
+    return handler.reject(error);
   }
 }

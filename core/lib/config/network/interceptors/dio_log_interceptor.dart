@@ -30,6 +30,6 @@ final InterceptorsWrapper dioLoggerInterceptor = InterceptorsWrapper(
       'NETWORK ERROR: ${error.error}: ${error.response}\n'
       'path=${error.requestOptions.path}',
     );
-    handler.next(error);
+    handler.reject(error);
   },
 );

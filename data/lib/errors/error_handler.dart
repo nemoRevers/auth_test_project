@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:domain/domain.dart';
 
 class ErrorHandler {
-  Future<Never> handleError(DioException error) async {
+  Future<Never> handleError(DioException error) {
     final Response<dynamic>? response = error.response;
     if (response == null) {
       throw AppException('empty response');
@@ -11,7 +11,8 @@ class ErrorHandler {
       if (statusCode != null) {
         if (statusCode == 400) {
           throw AppException(
-              error.response?.data['message'] ?? 'empty message');
+            error.response?.data['message'] ?? 'empty message',
+          );
         }
 
         if (statusCode == 401) {
@@ -22,8 +23,10 @@ class ErrorHandler {
           throw AppException(error.response?.data['message'] ?? 'server error');
         }
       }
-
-      throw Exception(error.toString());
+      if (error.response != null) {
+        throw AppException(error.response?.data['message']);
+      }
+      throw error;
     }
   }
 }

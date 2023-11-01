@@ -5,7 +5,7 @@ import 'user_entity.dart';
 
 part 'authorization_entity.g.dart';
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@JsonSerializable(explicitToJson: true)
 class AuthorizationEntity {
   final TokensEntity tokens;
   final UserEntity user;

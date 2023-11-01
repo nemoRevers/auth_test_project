@@ -3,12 +3,12 @@ import 'package:flutter/cupertino.dart';
 
 class AuthButton extends StatelessWidget {
   final Widget child;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   const AuthButton({
     super.key,
     required this.child,
-    required this.onPressed,
+    this.onPressed,
   });
 
   @override

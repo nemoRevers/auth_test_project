@@ -8,6 +8,9 @@ abstract class  LocaleKeys {
   static const signUp = 'signUp';
   static const profile = 'profile';
   static const signOut = 'signOut';
+  static const requestFailed = 'requestFailed';
+  static const emailIsNotCorrect = 'emailIsNotCorrect';
+  static const passwordIsNotCorrect = 'passwordIsNotCorrect';
   static const bottomNavigationBar_news = 'bottomNavigationBar.news';
   static const bottomNavigationBar_map = 'bottomNavigationBar.map';
   static const bottomNavigationBar_like = 'bottomNavigationBar.like';

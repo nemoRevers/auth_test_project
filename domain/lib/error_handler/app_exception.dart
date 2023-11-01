@@ -1,4 +1,4 @@
- class AppException implements Exception {
+class AppException implements Exception {
   final String message;
 
   AppException(
@@ -9,4 +9,6 @@
   String toString() => message;
 
   factory AppException.unknown() => AppException('Unknown Error!');
+
+  factory AppException.empty() => AppException('Empty response!');
 }

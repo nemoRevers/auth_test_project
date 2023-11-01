@@ -1,10 +1,14 @@
+import '../domain.dart';
 import 'usecase.dart';
 
 class SignOutUseCase implements UseCase<NoParams, void> {
-  const SignOutUseCase();
+  final ProfileRepository _profileRepository;
+
+  const SignOutUseCase(ProfileRepository profileRepository)
+      : _profileRepository = profileRepository;
 
   @override
   Future<void> execute(NoParams params) {
-    throw UnimplementedError();
+    return _profileRepository.signOut();
   }
 }

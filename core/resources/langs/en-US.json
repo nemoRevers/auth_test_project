@@ -6,6 +6,9 @@
   "signUp": "Sgn up",
   "profile": "Profile",
   "signOut": "Sign out",
+  "requestFailed": "Request failed",
+  "emailIsNotCorrect": "Email is not correct",
+  "passwordIsNotCorrect": "Password is not correct",
   "bottomNavigationBar": {
     "news": "News",
     "map": "Map",

@@ -15,7 +15,7 @@ class AppConfig {
     String baseUrl;
     switch (flavor) {
       case Flavor.dev:
-        baseUrl = 'http://45.10.110.181:8080/';
+        baseUrl = 'http://45.10.110.181:8080';
         break;
     }
 

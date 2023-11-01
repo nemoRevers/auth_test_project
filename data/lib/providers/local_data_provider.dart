@@ -1,44 +1,31 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
 abstract class LocalDataProvider {
   Future<void> write({required String key, required String value});
 
   Future<String?> read(String key);
 
   Future<void> delete(String key);
-
-  Future<void> deleteAll();
-
-  Future<bool> contains(String key);
 }
 
-class LocalDataProviderImpl implements LocalDataProvider{
-  @override
-  Future<bool> contains(String key) {
-    // TODO: implement contains
-    throw UnimplementedError();
-  }
+class SecureLocalDataProviderImpl implements LocalDataProvider {
+  final FlutterSecureStorage _flutterSecureStorage;
 
-  @override
-  Future<void> delete(String key) {
-    // TODO: implement delete
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> deleteAll() {
-    // TODO: implement deleteAll
-    throw UnimplementedError();
-  }
+  const SecureLocalDataProviderImpl(FlutterSecureStorage flutterSecureStorage)
+      : _flutterSecureStorage = flutterSecureStorage;
 
   @override
   Future<String?> read(String key) {
-    // TODO: implement read
-    throw UnimplementedError();
+    return _flutterSecureStorage.read(key: key);
   }
 
   @override
   Future<void> write({required String key, required String value}) {
-    // TODO: implement write
-    throw UnimplementedError();
+    return _flutterSecureStorage.write(key: key, value: value);
   }
 
+  @override
+  Future<void> delete(String key) {
+    return _flutterSecureStorage.delete(key: key);
+  }
 }

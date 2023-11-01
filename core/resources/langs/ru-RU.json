@@ -6,6 +6,9 @@
   "signUp": "Зарегистрироваться",
   "profile": "Профиль",
   "signOut": "Выйти",
+  "requestFailed": "Запрос не выполнен",
+  "emailIsNotCorrect": "Email не коректен",
+  "passwordIsNotCorrect": "Пароль не коректен",
   "bottomNavigationBar": {
     "news": "Лента",
     "map": "Карта",
